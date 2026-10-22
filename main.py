@@ -44,7 +44,7 @@ fursuits = {
             "image": "images/il_794xN.7501864133_o83h.webp",
             "description": "여기에 퍼슈트의 특징이나 소개를 입력하세요.",
             "maker": "제작자 정보를 입력하세요.",
-            "link": ""
+            "link": "https://www.etsy.com/listing/1699301493/complete-fursuit-custom-furry-full-suit?utm_source=chatgpt.com"
         }
     ],
 
