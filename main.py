@@ -41,7 +41,7 @@ fursuits = {
     "빨강": [
         {
             "name": "여기에 퍼슈트 이름 입력",
-            "image": "images/red_example.jpg",
+            "image": "images/il_794xN.7501864133_o83h.webp",
             "description": "여기에 퍼슈트의 특징이나 소개를 입력하세요.",
             "maker": "제작자 정보를 입력하세요.",
             "link": ""
