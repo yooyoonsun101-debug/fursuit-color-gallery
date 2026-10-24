@@ -132,10 +132,10 @@ fursuits = {
     "빨강": [
         {
             "name": "여기에 퍼슈트 이름 입력",
-            "image": "images/red_example.jpg",
+            "image": "images/il_794xN.7501864133_o83h.webp",
             "description": "여기에 퍼슈트의 특징을 적어 줘.",
-            "maker": "",
-            "link": ""
+            "maker": "마라톤",
+            "link": "https://www.etsy.com/listing/1699301493/complete-fursuit-custom-furry-full-suit"
         }
     ],
     "주황": [],
