@@ -1,6 +1,8 @@
 
 import streamlit as st
+import streamlit.components.v1 as components
 from pathlib import Path
+import html
 
 # ==========================================
 # 1. 웹사이트 기본 설정
@@ -17,11 +19,8 @@ BASE_DIR = Path(__file__).parent
 # ==========================================
 # 2. 화면 디자인
 # ==========================================
-# CSS는 웹사이트의 색상, 크기, 배치 등을 꾸미는 코드야.
-
 st.markdown("""
 <style>
-/* 페이지 여백을 줄여 스크롤을 최소화해 */
 .block-container {
     padding-top: 0.8rem;
     padding-bottom: 0.3rem;
@@ -30,53 +29,12 @@ st.markdown("""
     max-width: 100%;
 }
 
-/* 제목 */
 .main-title {
     font-size: clamp(22px, 2.2vw, 34px);
     font-weight: 800;
     margin-bottom: 0.5rem;
 }
 
-/* 색상 버튼의 기본 모양 */
-div[data-testid="stButton"] > button {
-    width: 100%;
-    min-height: 48px;
-    padding: 0.2rem;
-    border-radius: 9px;
-    font-weight: 700;
-}
-
-/* 12가지 색상의 버튼 배경색 */
-.st-key-color_빨강 button { background: #E53935; color: white; }
-.st-key-color_주황 button { background: #FB8C00; color: white; }
-.st-key-color_노랑 button { background: #FDD835; color: #222; }
-.st-key-color_초록 button { background: #43A047; color: white; }
-.st-key-color_파랑 button { background: #1E88E5; color: white; }
-.st-key-color_하늘색 button { background: #4FC3F7; color: #222; }
-.st-key-color_보라 button { background: #8E24AA; color: white; }
-.st-key-color_분홍 button { background: #EC407A; color: white; }
-.st-key-color_검정 button { background: #303030; color: white; }
-.st-key-color_회색 button { background: #9E9E9E; color: #222; }
-.st-key-color_하양 button { background: #FFFFFF; color: #222; }
-.st-key-color_갈색 button { background: #795548; color: white; }
-
-/* 선택 상태를 테두리로 구분해 */
-.st-key-color_빨강 button,
-.st-key-color_주황 button,
-.st-key-color_노랑 button,
-.st-key-color_초록 button,
-.st-key-color_파랑 button,
-.st-key-color_하늘색 button,
-.st-key-color_보라 button,
-.st-key-color_분홍 button,
-.st-key-color_검정 button,
-.st-key-color_회색 button,
-.st-key-color_하양 button,
-.st-key-color_갈색 button {
-    border: 2px solid #777;
-}
-
-/* 퍼슈트 이름을 크고 굵게 표시해 */
 .suit-name {
     font-size: clamp(25px, 3vw, 42px);
     font-weight: 850;
@@ -85,18 +43,10 @@ div[data-testid="stButton"] > button {
     margin-bottom: 1rem;
 }
 
-/* 퍼슈트 설명 글씨 */
 .suit-info {
     font-size: clamp(14px, 1.2vw, 18px);
     line-height: 1.6;
     overflow-wrap: anywhere;
-}
-
-/* 낮은 화면에서는 여백과 제목 크기를 줄여 */
-@media (max-height: 750px) {
-    .block-container {
-        padding-top: 0.3rem;
-    }
 }
 </style>
 """, unsafe_allow_html=True)
@@ -104,7 +54,8 @@ div[data-testid="stButton"] > button {
 # ==========================================
 # 3. 색상 목록
 # ==========================================
-# 색상 이름과 실제 버튼 색상을 연결해.
+# 각 색상의 이름과 실제 색상 코드를 지정해.
+# 이 색상 코드로 이모지가 아닌 사각형을 그려.
 
 colors = {
     "빨강": "#E53935",
@@ -122,11 +73,10 @@ colors = {
 }
 
 # ==========================================
-# 4. 퍼슈트 정보 입력
+# 4. 퍼슈트 정보
 # ==========================================
-# 사진은 GitHub의 images 폴더에 넣어 줘.
-# image에는 사진의 경로를 입력하면 돼.
-# 예: images/ruby.jpg
+# 사진은 images 폴더에 넣고 파일 경로를 입력해.
+# 이름과 설명 등은 네가 원하는 정보로 수정하면 돼.
 
 fursuits = {
     "빨강": [
@@ -154,13 +104,11 @@ fursuits = {
 # ==========================================
 # 5. 선택한 색상 기억하기
 # ==========================================
-# 처음에는 빨강을 선택하고, 버튼을 누르면 선택 색상이 바뀌어.
-
 if "selected_color" not in st.session_state:
     st.session_state.selected_color = "빨강"
 
 # ==========================================
-# 6. 페이지 제목
+# 6. 제목
 # ==========================================
 st.markdown(
     '<div class="main-title">퍼슈트 컬러 도감</div>',
@@ -168,11 +116,8 @@ st.markdown(
 )
 
 # ==========================================
-# 7. 화면을 3개 영역으로 나누기
+# 7. 화면을 세 영역으로 나누기
 # ==========================================
-# 왼쪽은 색상, 가운데는 사진, 오른쪽은 정보 영역이야.
-# 숫자가 클수록 영역의 너비가 넓어져.
-
 left, center, right = st.columns(
     [1, 2, 3],
     gap="medium",
@@ -180,48 +125,90 @@ left, center, right = st.columns(
 )
 
 # ==========================================
-# 8. 왼쪽: 색상 선택 버튼 6행 × 2열
+# 8. 왼쪽: 색상 선택
 # ==========================================
 with left:
     st.markdown("#### 색상 선택")
 
     color_names = list(colors.keys())
 
-    # 두 개의 열을 만들어 색상을 6개씩 배치해.
-    col1, col2 = st.columns(2, gap="small")
+    # 색상 버튼을 6행 × 2열로 배치해.
+    # HTML로 색상 사각형을 직접 그리므로
+    # 브라우저의 이모지 표시 방식에 영향을 받지 않아.
 
-    for index, color_name in enumerate(color_names):
-        # 앞의 6개는 왼쪽, 뒤의 6개는 오른쪽 열에 표시해.
-        target_col = col1 if index < 6 else col2
+    for row in range(6):
+        col_a, col_b = st.columns(2, gap="small")
 
-        with target_col:
-            # 현재 선택된 색상에는 체크 표시를 붙여.
-            if st.session_state.selected_color == color_name:
-                label = f"✓ {color_name}"
-            else:
-                label = color_name
+        # 각 행에 표시할 두 가지 색상
+        row_colors = [color_names[row], color_names[row + 6]]
 
-            # 실제 색상 버튼을 눌렀을 때 선택 색상을 변경해.
-            if st.button(
-                label,
-                key=f"color_{color_name}",
-                use_container_width=True
-            ):
-                st.session_state.selected_color = color_name
-                st.rerun()
+        for col, color_name in zip([col_a, col_b], row_colors):
+            with col:
+                selected = (
+                    st.session_state.selected_color == color_name
+                )
 
-# 선택된 색상과 퍼슈트 목록을 가져와.
+                # 선택된 색상은 테두리를 더 진하게 표시해.
+                border_color = "#222222" if selected else "#D0D0D0"
+                border_width = "3px" if selected else "1px"
+
+                # 버튼 안에 색상 사각형과 이름을 함께 표시해.
+                # 색상 사각형은 HTML/CSS로 그린 실제 도형이야.
+                button_html = f"""
+                <div style="
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    gap:7px;
+                    border:{border_width} solid {border_color};
+                    border-radius:9px;
+                    padding:8px 3px;
+                    margin-bottom:5px;
+                    min-height:30px;
+                    background:#FFFFFF;
+                    color:#222222;
+                    font-size:13px;
+                    font-weight:600;
+                    box-sizing:border-box;
+                ">
+                    <span style="
+                        display:inline-block;
+                        width:17px;
+                        height:17px;
+                        min-width:17px;
+                        background:{colors[color_name]};
+                        border:1px solid #888888;
+                        border-radius:3px;
+                        box-sizing:border-box;
+                    "></span>
+                    <span>{html.escape(color_name)}</span>
+                </div>
+                """
+
+                st.markdown(button_html, unsafe_allow_html=True)
+
+                # 실제 클릭 동작은 Streamlit 버튼이 담당해.
+                if st.button(
+                    f"{color_name} 선택",
+                    key=f"color_{color_name}",
+                    use_container_width=True
+                ):
+                    st.session_state.selected_color = color_name
+                    st.rerun()
+
+# ==========================================
+# 9. 선택한 퍼슈트 정보 불러오기
+# ==========================================
 selected_color = st.session_state.selected_color
 suits = fursuits.get(selected_color, [])
 
 # ==========================================
-# 9. 가운데: 퍼슈트 사진
+# 10. 가운데: 퍼슈트 사진
 # ==========================================
 with center:
     st.markdown("#### 퍼슈트 사진")
 
     if suits:
-        # 같은 색상에 퍼슈트가 여러 개면 선택 메뉴를 표시해.
         if len(suits) > 1:
             suit_names = [s["name"] for s in suits]
             selected_name = st.selectbox(
@@ -229,16 +216,15 @@ with center:
                 suit_names,
                 label_visibility="collapsed"
             )
-            suit = next(s for s in suits if s["name"] == selected_name)
+            suit = next(
+                s for s in suits if s["name"] == selected_name
+            )
         else:
             suit = suits[0]
 
-        # 사진 파일의 실제 위치를 확인해.
         image_path = BASE_DIR / suit["image"]
 
         if image_path.is_file():
-            # 사진의 원래 비율을 유지하며 화면 너비에 맞춰 표시해.
-            # 사진은 2:3 비율로 준비하는 것을 권장해.
             st.image(
                 str(image_path),
                 use_container_width=True
@@ -249,22 +235,24 @@ with center:
             )
     else:
         suit = None
-        st.info(f"아직 {selected_color} 퍼슈트가 등록되지 않았어요.")
+        st.info(
+            f"아직 {selected_color} 퍼슈트가 등록되지 않았어요."
+        )
 
 # ==========================================
-# 10. 오른쪽: 퍼슈트 정보
+# 11. 오른쪽: 퍼슈트 정보
 # ==========================================
 with right:
     st.markdown("#### 퍼슈트 정보")
 
     if suit:
-        # 이름을 크고 굵게 표시해.
         st.markdown(
-            f'<div class="suit-name">{suit["name"]}</div>',
+            f'<div class="suit-name">'
+            f'{html.escape(suit["name"])}</div>',
             unsafe_allow_html=True
         )
 
-        # 선택한 색상을 작은 색상 표시와 함께 보여 줘.
+        # 현재 선택한 색상과 사각형을 함께 표시해.
         st.markdown(
             f"""
             <div style="
@@ -282,7 +270,7 @@ with right:
                     border:1px solid #888;
                     border-radius:3px;
                 "></span>
-                {selected_color}
+                {html.escape(selected_color)}
             </div>
             """,
             unsafe_allow_html=True
@@ -290,24 +278,25 @@ with right:
 
         st.markdown("**소개**")
         st.markdown(
-            f'<div class="suit-info">{suit["description"]}</div>',
+            f'<div class="suit-info">'
+            f'{html.escape(suit["description"])}</div>',
             unsafe_allow_html=True
         )
 
-        # 제작자 정보가 있을 때만 표시해.
         if suit.get("maker"):
             st.markdown("**제작자**")
             st.write(suit["maker"])
 
-        # 링크가 있을 때만 표시해.
         if suit.get("link"):
             st.markdown(f"[관련 링크 열기]({suit['link']})")
 
     else:
         st.markdown("### 등록된 정보가 없어요")
-        st.write("이 색상의 퍼슈트 정보를 추가하면 여기에 표시돼.")
+        st.write(
+            "이 색상의 퍼슈트 정보를 추가하면 여기에 표시돼."
+        )
 
 # ==========================================
-# 11. 하단 안내
+# 12. 하단 안내
 # ==========================================
 st.caption("퍼슈트 컬러 도감")
