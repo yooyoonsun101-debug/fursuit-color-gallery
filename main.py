@@ -3,7 +3,7 @@ import streamlit as st
 from pathlib import Path
 
 # ==========================================
-# 1. 웹사이트 기본 설정
+# 1. 기본 설정
 # ==========================================
 
 st.set_page_config(
@@ -16,34 +16,35 @@ st.set_page_config(
 BASE_DIR = Path(__file__).parent
 
 # ==========================================
-# 2. 색상 목록
+# 2. 색상 정보
 # ==========================================
-# 색상 이름과 실제 버튼 배경색을 연결해.
-# 색상을 추가하거나 바꾸고 싶으면 이 부분을 수정하면 돼.
+# key: 내부에서 사용하는 영문 식별자
+# name: 화면에 표시할 한글 색상 이름
+# hex: 버튼에 적용할 실제 색상
 
-colors = {
-    "빨강": "#E53935",
-    "주황": "#FB8C00",
-    "노랑": "#FDD835",
-    "초록": "#43A047",
-    "파랑": "#1E88E5",
-    "하늘색": "#4FC3F7",
-    "보라": "#8E24AA",
-    "분홍": "#EC407A",
-    "검정": "#303030",
-    "회색": "#9E9E9E",
-    "하양": "#FFFFFF",
-    "갈색": "#795548",
-}
+colors = [
+    {"key": "red", "name": "빨강", "hex": "#E53935", "text": "#FFFFFF"},
+    {"key": "orange", "name": "주황", "hex": "#FB8C00", "text": "#FFFFFF"},
+    {"key": "yellow", "name": "노랑", "hex": "#FDD835", "text": "#222222"},
+    {"key": "green", "name": "초록", "hex": "#43A047", "text": "#FFFFFF"},
+    {"key": "blue", "name": "파랑", "hex": "#1E88E5", "text": "#FFFFFF"},
+    {"key": "skyblue", "name": "하늘색", "hex": "#4FC3F7", "text": "#222222"},
+    {"key": "purple", "name": "보라", "hex": "#8E24AA", "text": "#FFFFFF"},
+    {"key": "pink", "name": "분홍", "hex": "#EC407A", "text": "#FFFFFF"},
+    {"key": "black", "name": "검정", "hex": "#303030", "text": "#FFFFFF"},
+    {"key": "gray", "name": "회색", "hex": "#9E9E9E", "text": "#222222"},
+    {"key": "white", "name": "하양", "hex": "#FFFFFF", "text": "#222222"},
+    {"key": "brown", "name": "갈색", "hex": "#795548", "text": "#FFFFFF"},
+]
 
 # ==========================================
-# 3. 화면 디자인
+# 3. 웹사이트 디자인
 # ==========================================
-# CSS는 버튼의 색상, 테두리, 크기 등을 꾸미는 코드야.
+# 버튼 식별자는 영문으로 지정했어.
+# 그래서 CSS가 각 버튼을 구분하기 쉬워져.
 
-st.markdown("""
+css = """
 <style>
-/* 화면 여백을 줄여 공간을 확보해 */
 .block-container {
     padding-top: 0.8rem;
     padding-bottom: 0.3rem;
@@ -52,120 +53,79 @@ st.markdown("""
     max-width: 100%;
 }
 
-/* 웹사이트 제목 */
 .main-title {
     font-size: clamp(22px, 2.2vw, 34px);
     font-weight: 800;
     margin-bottom: 0.5rem;
 }
 
-/* 모든 색상 버튼의 공통 크기와 모양 */
+/* 모든 색상 버튼의 기본 크기 */
 div[data-testid="stButton"] > button {
     width: 100%;
     min-height: 48px;
-    padding: 0.2rem;
     border-radius: 9px;
     font-weight: 700;
     border: 2px solid #777777;
     transition: filter 0.15s ease;
 }
 
-/* 마우스를 올리면 버튼이 살짝 밝아져 */
-div[data-testid="stButton"] > button:hover {
-    filter: brightness(1.08);
-    border: 2px solid #222222;
-}
-
-/* 빨강 */
-.st-key-color_빨강 button {
+/* 각 버튼의 실제 배경색 */
+.st-key-color_red button {
     background-color: #E53935 !important;
-    color: white !important;
+    color: #FFFFFF !important;
 }
-
-/* 주황 */
-.st-key-color_주황 button {
+.st-key-color_orange button {
     background-color: #FB8C00 !important;
-    color: white !important;
+    color: #FFFFFF !important;
 }
-
-/* 노랑 */
-.st-key-color_노랑 button {
+.st-key-color_yellow button {
     background-color: #FDD835 !important;
     color: #222222 !important;
 }
-
-/* 초록 */
-.st-key-color_초록 button {
+.st-key-color_green button {
     background-color: #43A047 !important;
-    color: white !important;
+    color: #FFFFFF !important;
 }
-
-/* 파랑 */
-.st-key-color_파랑 button {
+.st-key-color_blue button {
     background-color: #1E88E5 !important;
-    color: white !important;
+    color: #FFFFFF !important;
 }
-
-/* 하늘색 */
-.st-key-color_하늘색 button {
+.st-key-color_skyblue button {
     background-color: #4FC3F7 !important;
     color: #222222 !important;
 }
-
-/* 보라 */
-.st-key-color_보라 button {
+.st-key-color_purple button {
     background-color: #8E24AA !important;
-    color: white !important;
+    color: #FFFFFF !important;
 }
-
-/* 분홍 */
-.st-key-color_분홍 button {
+.st-key-color_pink button {
     background-color: #EC407A !important;
-    color: white !important;
+    color: #FFFFFF !important;
 }
-
-/* 검정 */
-.st-key-color_검정 button {
+.st-key-color_black button {
     background-color: #303030 !important;
-    color: white !important;
+    color: #FFFFFF !important;
 }
-
-/* 회색 */
-.st-key-color_회색 button {
+.st-key-color_gray button {
     background-color: #9E9E9E !important;
     color: #222222 !important;
 }
-
-/* 하양 */
-.st-key-color_하양 button {
+.st-key-color_white button {
     background-color: #FFFFFF !important;
     color: #222222 !important;
 }
-
-/* 갈색 */
-.st-key-color_갈색 button {
+.st-key-color_brown button {
     background-color: #795548 !important;
-    color: white !important;
+    color: #FFFFFF !important;
 }
 
-/* 선택한 버튼은 더 굵은 검정 테두리로 강조 */
-.st-key-color_빨강 button:focus,
-.st-key-color_주황 button:focus,
-.st-key-color_노랑 button:focus,
-.st-key-color_초록 button:focus,
-.st-key-color_파랑 button:focus,
-.st-key-color_하늘색 button:focus,
-.st-key-color_보라 button:focus,
-.st-key-color_분홍 button:focus,
-.st-key-color_검정 button:focus,
-.st-key-color_회색 button:focus,
-.st-key-color_하양 button:focus,
-.st-key-color_갈색 button:focus {
-    outline: 3px solid #222222 !important;
-    outline-offset: 2px;
+/* 마우스를 올리면 살짝 밝아져 */
+div[data-testid="stButton"] > button:hover {
+    filter: brightness(1.08);
+    border: 2px solid #222222 !important;
 }
 
-/* 퍼슈트 이름은 크고 굵게 표시 */
+/* 퍼슈트 이름 */
 .suit-name {
     font-size: clamp(25px, 3vw, 42px);
     font-weight: 850;
@@ -174,28 +134,27 @@ div[data-testid="stButton"] > button:hover {
     margin-bottom: 1rem;
 }
 
-/* 퍼슈트 설명 글씨 */
 .suit-info {
     font-size: clamp(14px, 1.2vw, 18px);
     line-height: 1.6;
     overflow-wrap: anywhere;
 }
 
-/* 낮은 화면에서는 여백을 줄여 */
 @media (max-height: 750px) {
     .block-container {
         padding-top: 0.3rem;
     }
 }
 </style>
-""", unsafe_allow_html=True)
+"""
+
+st.markdown(css, unsafe_allow_html=True)
 
 # ==========================================
-# 4. 퍼슈트 정보 입력
+# 4. 퍼슈트 정보
 # ==========================================
-# 사진은 GitHub의 images 폴더에 넣어 줘.
-# image에는 사진 파일의 경로를 입력해.
-# 예: images/ruby.jpg
+# 사진은 images 폴더에 넣어 줘.
+# 사진 경로와 파일 이름이 정확히 일치해야 해.
 
 fursuits = {
     "빨강": [
@@ -228,7 +187,7 @@ if "selected_color" not in st.session_state:
     st.session_state.selected_color = "빨강"
 
 # ==========================================
-# 6. 페이지 제목
+# 6. 제목
 # ==========================================
 
 st.markdown(
@@ -237,7 +196,7 @@ st.markdown(
 )
 
 # ==========================================
-# 7. 화면을 왼쪽 / 가운데 / 오른쪽으로 나누기
+# 7. 화면 3개 영역
 # ==========================================
 
 left, center, right = st.columns(
@@ -247,38 +206,39 @@ left, center, right = st.columns(
 )
 
 # ==========================================
-# 8. 왼쪽: 색상 선택 버튼 6행 × 2열
+# 8. 왼쪽: 색상 버튼 6행 × 2열
 # ==========================================
 
 with left:
     st.markdown("#### 색상 선택")
 
-    color_names = list(colors.keys())
-
-    # 두 개의 열에 색상을 6개씩 배치해.
     col1, col2 = st.columns(2, gap="small")
 
-    for index, color_name in enumerate(color_names):
-        # 앞의 6개는 왼쪽, 뒤의 6개는 오른쪽 열에 표시해.
+    for index, color in enumerate(colors):
+        # 앞의 6개는 왼쪽 열, 뒤의 6개는 오른쪽 열
         target_col = col1 if index < 6 else col2
 
         with target_col:
-            # 현재 선택한 색상에는 체크 표시를 붙여.
-            if st.session_state.selected_color == color_name:
-                label = f"✓ {color_name}"
-            else:
-                label = color_name
+            name = color["name"]
+            key = color["key"]
 
-            # 버튼 배경색은 위 CSS에서 지정한 실제 색으로 표시돼.
+            # 선택한 색상에 체크 표시를 붙여.
+            label = (
+                f"✓ {name}"
+                if st.session_state.selected_color == name
+                else name
+            )
+
+            # 영문 key가 CSS의 버튼 색상 설정과 연결돼.
             if st.button(
                 label,
-                key=f"color_{color_name}",
+                key=f"color_{key}",
                 use_container_width=True
             ):
-                st.session_state.selected_color = color_name
+                st.session_state.selected_color = name
                 st.rerun()
 
-# 선택한 색상에 맞는 퍼슈트 목록을 가져와.
+# 선택된 색상의 퍼슈트 목록
 selected_color = st.session_state.selected_color
 suits = fursuits.get(selected_color, [])
 
@@ -290,24 +250,22 @@ with center:
     st.markdown("#### 퍼슈트 사진")
 
     if suits:
-        # 같은 색상의 퍼슈트가 여러 개라면 선택 메뉴를 표시해.
         if len(suits) > 1:
-            suit_names = [s["name"] for s in suits]
+            names = [s["name"] for s in suits]
 
-            selected_name = st.selectbox(
+            chosen_name = st.selectbox(
                 "퍼슈트 선택",
-                suit_names,
+                names,
                 label_visibility="collapsed"
             )
 
             suit = next(
                 s for s in suits
-                if s["name"] == selected_name
+                if s["name"] == chosen_name
             )
         else:
             suit = suits[0]
 
-        # 사진 파일의 실제 위치를 확인해.
         image_path = BASE_DIR / suit["image"]
 
         if image_path.is_file():
@@ -317,7 +275,7 @@ with center:
             )
         else:
             st.warning(
-                f"사진을 찾을 수 없어요: {suit['image']}"
+                f"사진 파일을 찾을 수 없어요: {suit['image']}"
             )
     else:
         suit = None
@@ -333,13 +291,17 @@ with right:
     st.markdown("#### 퍼슈트 정보")
 
     if suit:
-        # 이름을 크고 굵게 표시해.
         st.markdown(
             f'<div class="suit-name">{suit["name"]}</div>',
             unsafe_allow_html=True
         )
 
-        # 선택한 색상도 실제 색상 사각형과 함께 표시해.
+        # 선택한 색상 사각형과 이름
+        selected_hex = next(
+            c["hex"] for c in colors
+            if c["name"] == selected_color
+        )
+
         st.markdown(
             f"""
             <div style="
@@ -353,7 +315,7 @@ with right:
                     width:16px;
                     height:16px;
                     display:inline-block;
-                    background:{colors[selected_color]};
+                    background:{selected_hex};
                     border:1px solid #888;
                     border-radius:3px;
                 "></span>
@@ -383,7 +345,7 @@ with right:
         )
 
 # ==========================================
-# 11. 페이지 아래쪽 안내
+# 11. 하단 안내
 # ==========================================
 
 st.caption("퍼슈트 컬러 도감")
