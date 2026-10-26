@@ -166,17 +166,83 @@ fursuits = {
             "link": ""
         }
     ],
-    "주황": [],
-    "노랑": [],
-    "초록": [],
-    "파랑": [],
-    "하늘색": [],
-    "보라": [],
-    "분홍": [],
-    "검정": [],
-    "회색": [],
-    "하양": [],
-    "갈색": [],
+    "주황": [        {
+            "name": "여기에 퍼슈트 이름 입력",
+            "image": "images/joohaw_example.jpg",
+            "description": "여기에 퍼슈트의 특징을 적어 줘.",
+            "maker": "마라톤",
+            "link": ""
+        }],
+    "노랑": [        {
+            "name": "여기에 퍼슈트 이름 입력",
+            "image": "images/norang_example.jpg",
+            "description": "여기에 퍼슈트의 특징을 적어 줘.",
+            "maker": "마라톤",
+            "link": ""
+        }],
+    "초록": [        {
+            "name": "여기에 퍼슈트 이름 입력",
+            "image": "images/green_example.jpg",
+            "description": "여기에 퍼슈트의 특징을 적어 줘.",
+            "maker": "마라톤",
+            "link": ""
+        }],
+    "파랑": [        {
+            "name": "여기에 퍼슈트 이름 입력",
+            "image": "images/blue_example.jpg",
+            "description": "여기에 퍼슈트의 특징을 적어 줘.",
+            "maker": "마라톤",
+            "link": ""
+        }],
+    "하늘색": [        {
+            "name": "여기에 퍼슈트 이름 입력",
+            "image": "images/sky_example.jpg",
+            "description": "여기에 퍼슈트의 특징을 적어 줘.",
+            "maker": "마라톤",
+            "link": ""
+        }],
+    "보라": [        {
+            "name": "여기에 퍼슈트 이름 입력",
+            "image": "images/bola_example.jpg",
+            "description": "여기에 퍼슈트의 특징을 적어 줘.",
+            "maker": "마라톤",
+            "link": ""
+        }],
+    "분홍": [        {
+            "name": "여기에 퍼슈트 이름 입력",
+            "image": "images/pink_example.jpg",
+            "description": "여기에 퍼슈트의 특징을 적어 줘.",
+            "maker": "마라톤",
+            "link": ""
+        }],
+    "검정": [        {
+            "name": "여기에 퍼슈트 이름 입력",
+            "image": "images/black_example.jpg",
+            "description": "여기에 퍼슈트의 특징을 적어 줘.",
+            "maker": "마라톤",
+            "link": ""
+        }],
+    "회색": [        {
+            "name": "여기에 퍼슈트 이름 입력",
+            "image": "images/howsec_example.jpg",
+            "description": "여기에 퍼슈트의 특징을 적어 줘.",
+            "maker": "마라톤",
+            "link": ""
+        }],
+    "하양": [        {
+            "name": "여기에 퍼슈트 이름 입력",
+            "image": "images/white_example.jpg",
+            "description": "여기에 퍼슈트의 특징을 적어 줘.",
+            "maker": "마라톤",
+            "link": ""
+        }],
+    "갈색": [        {
+            "name": "여기에 퍼슈트 이름 입력",
+            "image": "images/garsec_example.jpg",
+            "description": "여기에 퍼슈트의 특징을 적어 줘.",
+            "maker": "마라톤",
+            "link": ""
+        }],
 }
 
 # ==========================================
