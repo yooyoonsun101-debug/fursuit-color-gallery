@@ -195,11 +195,11 @@ fursuits = {
             "link": ""
         }],
     "하늘색": [        {
-            "name": "여기에 퍼슈트 이름 입력",
+            "name": "유진",
             "image": "images/sky_example.jpg",
             "description": "여기에 퍼슈트의 특징을 적어 줘.",
-            "maker": "마라톤",
-            "link": ""
+            "maker": "여퍼만(자체 제작)",
+            "link": "https://x.com/unknown_1251?s=11"
         }],
     "보라": [        {
             "name": "여기에 퍼슈트 이름 입력",
