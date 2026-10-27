@@ -159,33 +159,33 @@ st.markdown(css, unsafe_allow_html=True)
 fursuits = {
     "빨강": [
         {
-            "name": "여기에 퍼슈트 이름 입력",
+            "name": "수라",
             "image": "images/red_example.jpg",
             "description": "여기에 퍼슈트의 특징을 적어 줘.",
-            "maker": "마라톤",
-            "link": ""
+            "maker": "@333sango & @ErqingZ",
+            "link": "https://x.com/shura_fursuit?s=11"
         }
     ],
     "주황": [        {
-            "name": "여기에 퍼슈트 이름 입력",
+            "name": "츠나",
             "image": "images/joohaw_example.jpg",
             "description": "여기에 퍼슈트의 특징을 적어 줘.",
-            "maker": "마라톤",
-            "link": ""
+            "maker": "JellyDog",
+            "link": "https://x.com/tsuna_9h?s=11"
         }],
     "노랑": [        {
-            "name": "여기에 퍼슈트 이름 입력",
+            "name": "부웅",
             "image": "images/norang_example.jpg",
             "description": "여기에 퍼슈트의 특징을 적어 줘.",
-            "maker": "마라톤",
-            "link": ""
+            "maker": "JellyDog",
+            "link": "https://x.com/voooong_?s=11"
         }],
     "초록": [        {
-            "name": "여기에 퍼슈트 이름 입력",
+            "name": "유우소(悠草)",
             "image": "images/green_example.jpg",
             "description": "여기에 퍼슈트의 특징을 적어 줘.",
-            "maker": "마라톤",
-            "link": ""
+            "maker": "Furmony",
+            "link": "https://x.com/inugami_31?s=11"
         }],
     "파랑": [        {
             "name": "여기에 퍼슈트 이름 입력",
