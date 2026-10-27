@@ -188,11 +188,11 @@ fursuits = {
             "link": "https://x.com/inugami_31?s=11"
         }],
     "파랑": [        {
-            "name": "여기에 퍼슈트 이름 입력",
+            "name": "프레일",
             "image": "images/blue_example.jpg",
             "description": "여기에 퍼슈트의 특징을 적어 줘.",
-            "maker": "마라톤",
-            "link": ""
+            "maker": "@XiangshanStudio & @Ghosts76532892",
+            "link": "https://x.com/_freil?s=11"
         }],
     "하늘색": [        {
             "name": "유진",
@@ -202,46 +202,46 @@ fursuits = {
             "link": "https://x.com/unknown_1251?s=11"
         }],
     "보라": [        {
-            "name": "여기에 퍼슈트 이름 입력",
+            "name": "소게(そが)",
             "image": "images/bola_example.jpg",
             "description": "여기에 퍼슈트의 특징을 적어 줘.",
-            "maker": "마라톤",
-            "link": ""
+            "maker": "Doggy Studio(犬工房)",
+            "link": "https://x.com/biohazard_29?s=11"
         }],
     "분홍": [        {
-            "name": "여기에 퍼슈트 이름 입력",
+            "name": "레이",
             "image": "images/pink_example.jpg",
             "description": "여기에 퍼슈트의 특징을 적어 줘.",
-            "maker": "마라톤",
-            "link": ""
+            "maker": "Furmony",
+            "link": "https://x.com/ray_fursuit?s=11"
         }],
     "검정": [        {
-            "name": "여기에 퍼슈트 이름 입력",
+            "name": "화미",
             "image": "images/black_example.jpg",
             "description": "여기에 퍼슈트의 특징을 적어 줘.",
-            "maker": "마라톤",
-            "link": ""
+            "maker": "알수없음",
+            "link": "https://x.com/hwami_furry?s=11"
         }],
     "회색": [        {
-            "name": "여기에 퍼슈트 이름 입력",
+            "name": "미히라(メキラ)",
             "image": "images/howsec_example.jpg",
             "description": "여기에 퍼슈트의 특징을 적어 줘.",
-            "maker": "마라톤",
-            "link": ""
+            "maker": "K-LINE",
+            "link": "https://x.com/run_charizard?s=11"
         }],
     "하양": [        {
-            "name": "여기에 퍼슈트 이름 입력",
+            "name": "푸르토(果糖含量)",
             "image": "images/white_example.jpg",
             "description": "여기에 퍼슈트의 특징을 적어 줘.",
-            "maker": "마라톤",
-            "link": ""
+            "maker": "Furpolis/虛構都市",
+            "link": "https://x.com/fructose_c?s=11"
         }],
     "갈색": [        {
-            "name": "여기에 퍼슈트 이름 입력",
+            "name": "슈키",
             "image": "images/garsec_example.jpg",
             "description": "여기에 퍼슈트의 특징을 적어 줘.",
-            "maker": "마라톤",
-            "link": ""
+            "maker": "BINARI FURSUIT",
+            "link": "https://x.com/syuki_fur?s=11"
         }],
 }
 
