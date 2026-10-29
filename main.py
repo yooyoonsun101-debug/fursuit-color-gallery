@@ -169,7 +169,7 @@ fursuits = {
     "주황": [        {
             "name": "츠나",
             "image": "images/joohaw_example.jpg",
-            "description": "@Tsuna_9H는 🦊 츠나 캐릭터로 활동하는 퍼슈터입니다. /n 여우 테마 퍼슈트를 착용한 일상을 #FursuitEveryday 해시태그와 함께 공유하며, @guni1636, @AN_Chobi94, @fluffyjellydog 등 아티스트와 협업한 콘텐츠를 프로필에 활용합니다. /n 5000명 이상 팔로워를 가진 블루 인증 계정으로 커뮤니티 내 활발한 소통을 이어갑니다.",
+            "description": "@Tsuna_9H는 🦊 츠나 캐릭터로 활동하는 퍼슈터입니다. \n 여우 테마 퍼슈트를 착용한 일상을 #FursuitEveryday 해시태그와 함께 공유하며, @guni1636, @AN_Chobi94, @fluffyjellydog 등 아티스트와 협업한 콘텐츠를 프로필에 활용합니다. \n 5000명 이상 팔로워를 가진 블루 인증 계정으로 커뮤니티 내 활발한 소통을 이어갑니다.",
             "maker": "JellyDog",
             "link": "https://x.com/tsuna_9h?s=11"
         }],
