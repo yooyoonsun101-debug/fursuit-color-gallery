@@ -216,11 +216,11 @@ fursuits = {
             "link": "https://x.com/ray_fursuit?s=11"
         }],
     "검정": [        {
-            "name": "화미",
+            "name": "버즈드(buzzed)",
             "image": "images/black_example.jpg",
-            "description": "여기에 퍼슈트의 특징을 적어 줘.",
-            "maker": "알수없음",
-            "link": "https://x.com/hwami_furry?s=11"
+            "description": "@imbuzzedd​는 ‘buzzed’ 또는 ‘バズド’로 활동하는 퍼리 크리에이터입니다. @mucknagabe의 친구이자 @Kemono_LINE 메이커로서 kemono 관련 양말 등 머천다이즈를 제작·판매하며, 컨벤션과 친구 모임, 여행 관련 콘텐츠를 공유합니다. 블랙 램/고트 스타일 퍼리 슈트 캐릭터로 알려져 있습니다.",
+            "maker": "K-LINE",
+            "link": "https://x.com/imbuzzedd?s=11"
         }],
     "회색": [        {
             "name": "미히라(メキラ)",
