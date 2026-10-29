@@ -211,7 +211,7 @@ fursuits = {
     "분홍": [        {
             "name": "레이",
             "image": "images/pink_example.jpg",
-            "description": "여기에 퍼슈트의 특징을 적어 줘.",
+            "description": "@Ray_Fursuit은 딸기룡 레이 캐릭터의 퍼슈트로 활동하는 아이돌입니다. Art&Fursuit Archive를 통해 퍼슈트 착용 사진과 관련 아트를 공유하며 #FursuitEveryday, #アイドラレイ 등의 해시태그로 일상과 이벤트 모습을 게시합니다.",
             "maker": "Furmony",
             "link": "https://x.com/ray_fursuit?s=11"
         }],
@@ -232,14 +232,14 @@ fursuits = {
     "하양": [        {
             "name": "푸르토(果糖含量)",
             "image": "images/white_example.jpg",
-            "description": "여기에 퍼슈트의 특징을 적어 줘.",
+            "description": "@Fructose_c​는 VRChat에서 활동하는 귀여운 ‘胶兽’(플러시 비스트)와 ‘彩虹小胶鲨’ 테마의 콘텐츠 크리에이터로, fursuit 사진과 매력적인 캐릭터 일러스트를 주로 공유합니다. 밝고 친근한 성격을 강조하며 정치나 논쟁을 피하고, 자신의 작품을 출처만 명시하면 자유롭게 공유할 수 있게 허용합니다. 10만 명이 넘는 팔로워를 보유한 인기 계정입니다.",
             "maker": "Furpolis/虛構都市",
             "link": "https://x.com/fructose_c?s=11"
         }],
     "갈색": [        {
             "name": "슈키",
             "image": "images/garsec_example.jpg",
-            "description": "여기에 퍼슈트의 특징을 적어 줘.",
+            "description": "@Syuki_fur​은 슈키의 퍼슈트 전용 계정으로 2025년 7월 11일 데뷔했습니다. 메이커는 @Binari2019이며 일상 계정은 @Syuki506으로 연결됩니다. #Fursuit #FursuitEveryday 해시태그와 함께 귀여운 퍼슈트 사진과 한일 혼용 메시지를 주로 올립니다.",
             "maker": "BINARI FURSUIT",
             "link": "https://x.com/syuki_fur?s=11"
         }],
