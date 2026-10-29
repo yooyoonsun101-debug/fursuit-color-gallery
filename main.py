@@ -176,7 +176,7 @@ fursuits = {
     "노랑": [        {
             "name": "부웅",
             "image": "images/norang_example.jpg",
-            "description": "여기에 퍼슈트의 특징을 적어 줘.",
+            "description": "@voooong_은 🐝 부웅(ブーウン)이라는 꿀벌 테마의 퍼리 캐릭터로 fursuit 활동을 하는 사용자입니다. @PRODUCTIONGAL_ 크루 멤버로서 퍼리 이벤트 참여와 디자인 작업을 하고 있으며, 한국어와 일본어를 주로 사용합니다..",
             "maker": "JellyDog",
             "link": "https://x.com/voooong_?s=11"
         }],
