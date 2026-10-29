@@ -190,21 +190,21 @@ fursuits = {
     "파랑": [        {
             "name": "프레일",
             "image": "images/blue_example.jpg",
-            "description": "여기에 퍼슈트의 특징을 적어 줘.",
+            "description": "@_FREIL은 3D 모델링 아티스트로 DM을 통해 커미션을 받습니다. ESFP 성격을 가진 25세 이상이며 @XiangshanStudio와 @Ghosts76532892와 연계되어 있습니다. 아름다운 캐릭터와 작품에 대한 긍정적인 반응을 자주 게시합니다.",
             "maker": "@XiangshanStudio & @Ghosts76532892",
             "link": "https://x.com/_freil?s=11"
         }],
     "하늘색": [        {
             "name": "유진",
             "image": "images/sky_example.jpg",
-            "description": "여기에 퍼슈트의 특징을 적어 줘.",
+            "description": "@Unknown_1251은 프로토겐 콘셉트로 활동하는 한국 남성 유저로, 캠핑을 주요 취미로 즐깁니다. 자동차 드라이브나 야외 활동 경험을 공유하며 친근하고 밝은 태도로 소통합니다.",
             "maker": "여퍼만(자체 제작)",
             "link": "https://x.com/unknown_1251?s=11"
         }],
     "보라": [        {
             "name": "소게(そが)",
             "image": "images/bola_example.jpg",
-            "description": "여기에 퍼슈트의 특징을 적어 줘.",
+            "description": "@BIOHAZARD_29(そが🚑)는 보라색 늑대🐺 페르소나를 지니며 구급차를 타는 일상을 공유합니다. 경찰차와 구급차 등 차량, 특히 리스 차량 시장에 대한 관심을 자주 드러냅니다.",
             "maker": "Doggy Studio(犬工房)",
             "link": "https://x.com/biohazard_29?s=11"
         }],
@@ -225,7 +225,7 @@ fursuits = {
     "회색": [        {
             "name": "미히라(メキラ)",
             "image": "images/howsec_example.jpg",
-            "description": "여기에 퍼슈트의 특징을 적어 줘.",
+            "description": "@run_charizard은 퍼슈터이자 아마추어 사진작가로 Ph. Dog 활동을 하며 Doger, Lecto, Tio, Mihira의 오너입니다. 12,000명 이상의 팔로워를 보유한 블루 인증 사용자입니다.",
             "maker": "K-LINE",
             "link": "https://x.com/run_charizard?s=11"
         }],
