@@ -163,9 +163,7 @@ fursuits = {
             "image": "images/red_example.jpg",
             "description": "수라는 드래곤 퍼슈트를 착용하는 퍼슈터입니다.
             퍼슈트는 @333sango와 @erqingZ가 제작했으며 FurAffinity #dragon_shura로 활동합니다.
-            주로 화려한 드래곤 푸르슈트 사진과 재치 있는 캡션을 게시하며 팬들과 소통합니다.
-            
-            '왕 손톱!' ",
+            주로 화려한 드래곤 푸르슈트 사진과 재치 있는 캡션을 게시하며 팬들과 소통합니다.",
             "maker": "@333sango & @ErqingZ",
             "link": "https://x.com/shura_fursuit?s=11"
         }
